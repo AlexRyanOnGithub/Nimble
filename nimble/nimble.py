@@ -1,4 +1,4 @@
-import argparse, os, sys, select
+import argparse, os, sys
 import concurrent.futures
 from concurrent.futures import ThreadPoolExecutor
 
