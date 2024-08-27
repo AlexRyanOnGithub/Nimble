@@ -29,7 +29,7 @@ pip install openai pypdf tqdm
 
 Below is an example of how it should be used:
 ```
-python3 nimble.py --doc ~/path/to/pdf/or/sample.txt -a ~/path/to/save/your/audiofiles/ --range 35 45 --voice echo --model tts-1-hd
+python3 nimble.py --doc ~/path/to/pdf/or/sample.txt -a ~/path/to/save/your/audiofiles.mp3 --range 35 45 --voice echo --model tts-1-hd
 ```
 
 The output audio is split amongst several parts saved to the specified folder using the following format as an example:
