@@ -14,7 +14,7 @@ if os.environ["OPENAI_API_KEY"]:
 
     # Arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("--doc", required=True, type=str, help="Provide the path to the PDF")
+    parser.add_argument("--doc", required=True, type=str, help="Provide the path to the PDF or TXT")
     parser.add_argument('-a', "--audio", required=True, type=str, help="Provide the path to save your audio file.")
 
     # Optional args
@@ -33,6 +33,8 @@ if os.environ["OPENAI_API_KEY"]:
         audio_fullpath = args.audio
         model = args.model
         voice = args.voice
+
+        assert audio_fullpath.endswith(".mp3")
 
         pages = ""
         if pdf_range:
@@ -168,11 +170,13 @@ if os.environ["OPENAI_API_KEY"]:
         audio_fullpath = args.audio
         model = args.model
         voice = args.voice
+        
+        assert audio_fullpath.endswith(".mp3")
 
         print(f"""
             Model: {model},
             Audio: {audio_fullpath},
-            TXT:   {txt_fullpath},
+            TXT:   {txt_fullpath}
                 """)
 
         # Ensure the provided txt_fullpath exists
